@@ -14,13 +14,14 @@ $result = mysqli_query($conn, "SELECT * FROM students");
 
 <table border="1" cellpadding="8">
     <tr>
-        <th>ID</th>
+        <th>id</th>
         <th>student no</th>
         <th>full name</th>
         <th>branch</th>
         <th>email</th>
         <th>contact</th>
         <th>date added</th>
+        <th>actions</th>
     </tr>
 
     <?php while($row = mysqli_fetch_assoc($result)): ?>
@@ -32,9 +33,11 @@ $result = mysqli_query($conn, "SELECT * FROM students");
         <td><?php echo $row['email']; ?></td>
         <td><?php echo $row['contact']; ?></td>
         <td><?php echo $row['date_added']; ?></td>
+        <td>
+            <a href="update.php?id=<?php echo $row['id']; ?>">edit</a>
+        </td>
     </tr>
     <?php endwhile; ?>
-
 </table>
 
 <br>
