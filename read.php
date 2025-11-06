@@ -33,10 +33,11 @@ $result = mysqli_query($conn, "SELECT * FROM students");
         <td><?php echo $row['email']; ?></td>
         <td><?php echo $row['contact']; ?></td>
         <td><?php echo $row['date_added']; ?></td>
-        <td>
-            <a href="update.php?id=<?php echo $row['id']; ?>">edit</a>
-        </td>
-    </tr>
+<td>
+    <a href="update.php?id=<?php echo $row['id']; ?>">edit</a> |
+    <a href="delete.php?id=<?php echo $row['id']; ?>">delete</a>
+</td>
+
     <?php endwhile; ?>
 </table>
 
